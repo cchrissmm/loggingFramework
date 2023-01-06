@@ -1,13 +1,14 @@
 #include "FS.h"
 #include "logger.h"
-#include "SPIFFS.h"
+//#include "SPIFFS.h"
 #include <vector>
 
 
 //**Constructor**************************************************
-logger::logger(String head)
+logger::logger(String name, String head)
 {
     this->head = head;
+    this->name = name;
 }
 
 void logger::data(String value)
@@ -30,21 +31,21 @@ void logger::data(String value)
 //**read the data from the file***********************************
 void logger::read()
 {
-    Serial.println("filedump requested");
+    Serial.println("*************************filedump requested: " + name);
 
     std::sort(buffer, buffer + BUFFER_SIZE); // Sort the buffer in ascending order
 
     bufferPos = 0; // reset the bufferpos for the next write
 
-    Serial.println("TIME: " + head); // stamp the header
-
+    Serial.println("TIME," + head); // stamp the header
+    
     // Print the sorted buffer
     for (int i = 0; i < BUFFER_SIZE; i++)
     {
         Serial.println(buffer[i]);
     }
 
-    Serial.println("filedump ended ");
+    Serial.println("**************************filedump ended " + name);
 }
 
 
