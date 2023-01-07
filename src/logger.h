@@ -4,7 +4,7 @@
 class logger {
 
 public:
-static const int BUFFER_SIZE = 10; //maximum number of entries line for the log file, after this it ringbuffers 
+static const int BUFFER_SIZE = 100; //maximum number of entries line for the log file, after this it ringbuffers 
 
 logger(String name, String head);     //construct an instance of logger passing it the filename 
 void data(String data); //write some data
