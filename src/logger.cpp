@@ -5,19 +5,13 @@
 
 
 //**Constructor**************************************************
-logger::logger(String name, String head)
+logger::logger(String name, String head, int bufferSize)
 {
     this->head = head;
     this->name = name;
+    this->BUFFER_SIZE = bufferSize;
     buffer = new String[BUFFER_SIZE];
     bufferPos = 0;
-}
-
-void logger::setBufferSize(int newSize)
-{
-    delete[] buffer;
-    buffer = new String[newSize];
-    BUFFER_SIZE = newSize;
 }
 
 void logger::data(String value)

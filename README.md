@@ -14,13 +14,9 @@ Note, it can only take strings, so you need to convert whatever you want to log 
 Create an instance of the class at the top of your sketch.
 You need to pass it the name of the file and the header of the file.
 
-So if you wanted to create an object that is called "log01" to log VAR01 - 03 and call it "NAME" you'd do this 
+So if you wanted to create an object that is called "log01" to log VAR01 - 03 and call it "NAME", with a 1000line ring buffer you'd do this 
 
-`logger log01("NAME","VAR01,VAR02,VAR03");`
-
-And if you want to set the ringbuffer size you can, this sets it to 1000 lines:
-
-`log01.setBufferSize(1000);`
+`logger log01("NAME","VAR01,VAR02,VAR03",1000);`
 
 Then you just make a string of the data adding the delimator that you want, I've used a comma:
 

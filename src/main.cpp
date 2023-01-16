@@ -1,7 +1,7 @@
 #include <Arduino.h>
 #include "logger.h"
 
-logger log01("NAME","VAR01,VAR02,VAR03"); // create the logging instance passing the name and header
+logger log01("NAME","VAR01,VAR02,VAR03",1000); // create the logging instance passing the name, header and buffer size
 
 
 int var01, var02, var03;
@@ -23,8 +23,6 @@ void serialRX()
 void setup()
 {
   Serial.begin(115200);
-  
-  log01.setBufferSize(1000); // set the ringbuffer to 1000 lines
 
   Serial.println("setup done");
 }
