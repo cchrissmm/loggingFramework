@@ -18,6 +18,10 @@ So if you wanted to create an object that is called "log01" to log VAR01 - 03 an
 
 `logger log01("NAME","VAR01,VAR02,VAR03");`
 
+And if you want to set the ringbuffer size you can, this sets it to 1000 lines:
+
+`log01.setBufferSize(1000);`
+
 Then you just make a string of the data adding the delimator that you want, I've used a comma:
 
 `String log = String(var01) + "," + String(var02) + "," + String(var03);`

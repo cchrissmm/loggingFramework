@@ -9,6 +9,15 @@ logger::logger(String name, String head)
 {
     this->head = head;
     this->name = name;
+    buffer = new String[BUFFER_SIZE];
+    bufferPos = 0;
+}
+
+void logger::setBufferSize(int newSize)
+{
+    delete[] buffer;
+    buffer = new String[newSize];
+    BUFFER_SIZE = newSize;
 }
 
 void logger::data(String value)
